@@ -19,7 +19,7 @@ _db_config_file = _config_path + os.sep + "db_conf.yml"
 # 定义 logs 文件路径
 _log_path = BASE_DIR + os.sep + "logs"
 # 定义report目录的路径
-_report_path = BASE_DIR + os.sep + "testcase/report"
+_report_path = BASE_DIR + os.sep + "report"
 
 
 def get_report_path():
