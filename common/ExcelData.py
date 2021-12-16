@@ -8,7 +8,7 @@ class Data:
 
 # 1 使用excel工具类 获取结果list
 #         self.reader= ExcelReader("../data/testdata.xlsx","美多商城接口测试")
-        # print(reader.data())
+#         print(self.reader.data())
         self.reader = ExcelReader(testcase_file,sheet_name)
         # 2 列是否运行内容、Y
     def get_run_data(self):

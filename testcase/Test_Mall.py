@@ -19,7 +19,7 @@ from common.Base import init_db
 import requests
 
 # 2 定义登录方法
-def test_login():
+def tes_login():
     # 3 定义测试数据
     conf_y = ConfigYaml()
     url_path = conf_y.get_conf_url()
@@ -68,7 +68,7 @@ def test_login():
 """
 
 
-def test_info():
+def tes_info():
     # 1 参数
     url = "http://211.103.136.242:8064/user/"
     token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Ijk1MjY3MzYzOEBxcS5jb20iLCJleHAiOjE2MjAyNDQ5MTAsInVzZXJuYW1lIjoicHl0aG9uIiwidXNlcl9pZCI6MX0.1m0RdLbDDyq0-QVqswektQWSm3SJv9wFFJRAb3GP50o"
@@ -133,6 +133,7 @@ def cart():
     r = requests_post(url, json=data, headers=headers)
     # print(r.json())
     print(r)
+    print(headers)
 
 
 """
@@ -154,19 +155,19 @@ def order():
     print(r.json())
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
     # login()
     # info()
     # goods_list()
     # cart()
     # order()
-
-
-    #1 根据默认运行原则 调整py文件名，函数命名
-    #2 pytest.main()运行 或者命令行直接pytest运行
-    pytest.main(["-s"])
-
-
+#
+#
+#     #1 根据默认运行原则 调整py文件名，函数命名
+#     #2 pytest.main()运行 或者命令行直接pytest运行
+#     pytest.main(["-s"])
+#
+#
 
 
 

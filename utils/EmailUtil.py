@@ -41,6 +41,8 @@ class SendEmail:
     # 发送邮件
         self.smtp.sendmail(self.username,self.recv,msg.as_string())
 
+
+
 if __name__ == '__main__':
     # 初始化类 self,smtp_addr,username,password,recv,title,content,file)
     from config.Conf import ConfigYaml

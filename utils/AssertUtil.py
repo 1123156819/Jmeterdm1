@@ -34,6 +34,7 @@ class AssertUtil:
             return True
         except:
             self.log.error("code error,code is %s, expected_code is %s"%(body,expected_body))
+            raise
 #5 body包含
     def assert_in_body(self,body,expected_body):
         """
@@ -43,9 +44,9 @@ class AssertUtil:
         :return:
         """
         try:
-            body = json.dumps(body)
-            assert expected_body in body
+            # body = json.dumps(body)
             print(body)
+            assert expected_body in body
             return True
         except:
             self.log.error("不包含或者body是错误，body is %s,expected_body is %s"%(body,expected_body))

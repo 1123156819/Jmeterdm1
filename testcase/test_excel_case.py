@@ -12,7 +12,7 @@ import pytest
 from common import Base
 #1 初始化信息
 #1） 初始化测试用例文件
-case_file = os.path.join("../data",ConfigYaml().get_excel_file())
+case_file = os.path.join(Conf.get_data_path(),ConfigYaml().get_excel_file())
 #2） 测试用例sheet名称
 sheet_name = ConfigYaml().get_excel_sheet()
 #3） 获取运行测试用例列表
@@ -141,7 +141,8 @@ class Test_Excel:
         # 返回结果内容
         assert_util.assert_in_body(str(res["body"]),str(expect_result))
         # 数据库结果断言
-        Base.assert_db("db_1",res["body"],db_verify)
+        if db_verify:
+            Base.assert_db("db_1",res["body"],db_verify)
         # 1 初始化数据库
         # from common.Base import init_db
         # sql = init_db("db_1")
@@ -205,10 +206,10 @@ class Test_Excel:
             cookies = Base.res_sub(headers, cookies_data)
         return headers,cookies
 
-if __name__ == '__main__':
-    report_path = Conf.get_report_path()+os.sep+"result"
-    report_html_path = Conf.get_report_path()+os.sep+"html"
-    pytest.main(["-s","test_excel_case.py", "--alluredir",report_path])
+# if __name__ == '__main__':
+#     report_path = Conf.get_report_path()+os.sep+"result"
+#     report_html_path = Conf.get_report_path()+os.sep+"html"
+#     pytest.main(["-s","test_excel_case.py", "--alluredir",report_path])
     # Base.allure_report(report_path,report_html_path)
     # Base.send_mail(title="接口测试报告结果",content=report_html_path)
 

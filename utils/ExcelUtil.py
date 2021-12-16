@@ -14,6 +14,7 @@ class SheetTypeError(Exception):
 
 class ExcelReader:
     def __init__(self,excel_file,sheet_by):
+        
         if os.path.exists(excel_file):
             self.excel_file = excel_file
             self.sheet_by = sheet_by
